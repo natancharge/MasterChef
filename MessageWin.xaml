@@ -1,0 +1,19 @@
+﻿<Window x:Class="MasterChef.MessageWin"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:uc="clr-namespace:MasterChef.UserControls"
+        mc:Ignorable="d" Height="216" Width="384">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        
+        <TextBox Grid.Row="1" x:Name="Message"/>
+        <TextBlock x:Name="TextMessage" Text="Enter The ID of the user you would like to remove:" FontSize="16"/>
+        <Button Grid.Row="2" Click="OK" Content="OK" Margin="10"/>
+    </Grid>
+</Window>

@@ -1,0 +1,58 @@
+﻿<Page x:Class="MasterChef.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MasterChef"
+      mc:Ignorable="d" 
+      d:DesignHeight="595" d:DesignWidth="1000">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Border Background="#FFD500" Padding="30">
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="images/profileIcon.png" Margin="0 0 0 40" Width="160" Height="160"/>
+
+                <TextBlock TextAlignment="Center" FontWeight="SemiBold" FontSize="28" x:Name="UsersName" Foreground="#363636" Text="Welcome Back!"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" TextAlignment="Center" Margin="0 20 0 20" Foreground="#363636" Text="What would you like to do?"/>
+
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                    <Button Style="{StaticResource buttonBlack}" Margin="10" Click="NextLvl">
+                        <fa:ImageAwesome Icon="ArrowCircleUp" Width="25" Height="25" Foreground="#FFD500" Margin="3 0 0 0"/>
+                        <Button.ToolTip>
+                            <TextBlock Text="Continue to the next level"/>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Style="{StaticResource buttonBlack}" Margin="10" Click="Update">
+                        <fa:ImageAwesome Icon="FileTextOutline" Width="25" Height="25" Foreground="#FFD500" Margin="3 0 0 0"/>
+                        <Button.ToolTip>
+                            <TextBlock Text="Update your data and personal information"/>
+                        </Button.ToolTip>
+                    </Button>
+                    <Button Style="{StaticResource buttonBlack}" Margin="10" Click="Update">
+                        <fa:ImageAwesome Icon="Minus" Width="25" Height="25" Foreground="#FFD500" Margin="3 0 0 0"/>
+                        <Button.ToolTip>
+                            <TextBlock Text="Sign Out"/>
+                        </Button.ToolTip>
+                    </Button>
+                </StackPanel>
+            </StackPanel>
+        </Border>
+
+        <Border Grid.Column="1" Background="White" Padding="50, 30" CornerRadius="0 25 25 0">
+            <Grid>
+                <Border CornerRadius="25 25 25 25" Background="#868686">
+                    <UniformGrid Rows="2" x:Name="Recepies">
+                        <TextBlock TextAlignment="Center" FontWeight="SemiBold" FontSize="28" Foreground="#363636" Text="Your recepies will apear here" x:Name="TitleR"/>
+                        <TextBlock TextWrapping="Wrap" FontSize="16" TextAlignment="Center" Margin="0 20 0 20" Foreground="#363636" Text="- Empty" x:Name="contentR"/>
+                    </UniformGrid>
+                </Border>
+            </Grid>
+        </Border>
+    </Grid>
+ 
+</Page>

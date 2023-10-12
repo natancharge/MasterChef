@@ -1,0 +1,86 @@
+﻿<Page x:Class="MasterChef.SignUpP"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:MasterChef"
+      xmlns:fa="http://schemas.fontawesome.io/icons/"
+        xmlns:uc="clr-namespace:MasterChef.UserControls"
+        mc:Ignorable="d" Height="650" Width="1000" Background="Transparent" >
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="350"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <!--Left Section-->
+        <Border Background="#FFD500" Padding="30" CornerRadius="25 0 0 25">
+            <StackPanel VerticalAlignment="Center">
+                <Image Source="images/chef.png" Margin="0 0 0 40" Width="160" Height="160"/>
+
+                <TextBlock TextAlignment="Center" FontWeight="SemiBold" FontSize="28" Text="Let's get you sign up" Foreground="#363636"/>
+                <TextBlock TextWrapping="Wrap" FontSize="16" TextAlignment="Center" Margin="0 20 0 20" Foreground="#363636" Text="it should only take a couple of minutes and then you will ready to start!"/>
+                <TextBlock TextWrapping="Wrap" FontSize="12" TextAlignment="Center" Margin="0 0 0 0" Foreground="#363636" Text="If you have an acount you can also login" MouseLeftButtonDown="Login"/>
+
+                <Button Style="{StaticResource buttonBlack}" Click="ContinueToMainPage" x:Name="NextBtn" Visibility="Visible">
+                    <fa:ImageAwesome Icon="AngleRight" Width="25" Height="25" Foreground="#FFD500" Margin="3 0 0 0"/>
+
+                </Button>
+            </StackPanel>
+        </Border>
+
+        <!--Input Section-->
+        <Border Grid.Column="1" Padding="20" Background="White" CornerRadius="0 25 25 0">
+            <Grid>
+
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Height="550" Width="550">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="150"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                        <RowDefinition Height="auto"/>
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0" Text="Name" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="1" Text="Family" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="2" Text="Gender" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="3" Text="Date of Birth" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="4" Text="Email" Style="{StaticResource text}"/>
+                    <TextBlock Grid.Row="5" Text="Mobile" Style="{StaticResource text}"/>
+
+                    <TextBox Grid.Column="1" Grid.Row="0" x:Name="Name"/>
+                    <TextBox Grid.Column="1" Grid.Row="1" x:Name="Family"/>
+                    <TextBox Grid.Column="1" Grid.Row="3" x:Name="Date"/>
+                    <TextBox Grid.Column="1" Grid.Row="4" x:Name="Email"/>
+                    <TextBox Grid.Column="1" Grid.Row="5" x:Name="Mobile"/>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2" Margin="0 10">
+                        <uc:MyOption Text="Male" Icon="Male" MouseDoubleClick="Male"/>
+                        <uc:MyOption Text="Female" Icon="Female" MouseDoubleClick="Female"/>
+                    </StackPanel>
+
+                    <Grid Grid.Column="1" Grid.Row="7" Margin="0 40 0 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Button Style="{StaticResource buttonMain}" Margin="0 0 10 0" Content="Cancel" Click="ClearRegistration"/>
+                        <Button Grid.Column="1" Style="{StaticResource buttonMainGreen}" Margin="10 0 0 0" Content="Save" Click="Register"/>
+                    </Grid>
+
+                </Grid>
+            </Grid>
+        </Border>
+
+    </Grid>
+</Page>
